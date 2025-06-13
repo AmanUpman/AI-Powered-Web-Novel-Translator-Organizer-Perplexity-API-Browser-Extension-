@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Booktoki Novel Translator",
+  "version": "1.0",
+  "description": "Auto-translate and refine Booktoki novel chapters using Perplexity API.",
+  "permissions": ["scripting", "storage", "activeTab"],
+  "host_permissions": [
+    "https://booktoki468.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Translate Chapter"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://booktoki468.com/novel/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
